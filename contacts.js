@@ -1,5 +1,6 @@
 const fs = require("fs/promises");
 const path = require("path");
+const crypto = require("crypto");
 const contactsPath = path.resolve("./db/contacts.json");
 
 function listContacts() {
@@ -52,6 +53,7 @@ function addContact(name, email, phone) {
 
     if (name && email && phone) {
       arrData.push({
+        id: crypto.randomUUID(),
         name,
         email,
         phone: phone.toString(),
