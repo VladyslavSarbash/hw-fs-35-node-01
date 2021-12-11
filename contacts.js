@@ -2,7 +2,6 @@ const fs = require("fs/promises");
 const path = require("path");
 const crypto = require("crypto");
 const contactsPath = path.resolve("./db/contacts.json");
-
 function listContacts() {
   fs.readFile(contactsPath).then((data) => {
     const arrContacts = JSON.parse(data);
